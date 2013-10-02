@@ -1,0 +1,19 @@
+From: PyPi Notifier <{{mail.from}}>
+Subject: [PyPi-Notify][{{info.name}}] Version {{info.version}} of {{info.name}} is available.
+X-PyPi-Notify-Project: {{info.name}}
+X-PyPi-Notify-Version: {{info.version}}
+Date: {{ date }}
+
+A new version of package {{info.name}} has been detected: {{info.version}}
+
+Links:
+{% for url in urls -%}
+* {{url.packagetype}}:
+  url: {{url.url}}
+  size: {{url.size}}
+  md5: {{url.md5_digest}}
+  upload time: {{url.upload_time}}
+
+{%- endfor %}
+
+Good luck!
